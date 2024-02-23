@@ -1,0 +1,344 @@
+/* START GLOBAL */
+:root {
+  --main-color: #e65f78;
+  --sec-color: #212529;
+  --third-color: #6c757d;
+}
+@font-face {
+  font-family: main-font700;
+  src: url("../fonts/Montserrat-Bold.ttf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: main-font600;
+  src: url("../fonts/Montserrat-SemiBold.ttf");
+  font-weight: 600;
+}
+@font-face {
+  font-family: main-font500;
+  src: url("../fonts/Montserrat-Medium.ttf");
+  font-weight: 500;
+}
+@font-face {
+  font-family: main-font400;
+  src: url("../fonts/Montserrat-Regular.ttf");
+  font-weight: 400;
+}
+@font-face {
+  font-family: sec-font;
+  src: url("../fonts/Nunito-Regular.ttf");
+  font-weight: 400;
+}
+/* html {
+  scroll-padding-top: 40px;
+} */
+body {
+  font-family: "Nunito", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.btn-white {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: transparent;
+  --bs-btn-border-color: #fff;
+  --bs-btn-hover-color: black;
+  --bs-btn-hover-bg: #fff;
+  --bs-btn-hover-border-color: #fff;
+}
+.btn-pink {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--main-color);
+  --bs-btn-border-color: #fff;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: rgba(230, 95, 120, 0.9);
+  padding: 15px 32px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.text-pink {
+  color: var(--main-color);
+}
+.main-title p,
+#client .slide-items p {
+  max-width: 500px;
+  margin: auto;
+}
+.w-fit {
+  width: fit-content;
+}
+/* END GLOBAL */
+
+/* START NAV */
+.nav-link {
+  color: white;
+}
+#my-nav .navbar-nav .nav-link.active,
+#my-nav .navbar-nav .nav-link.show {
+  color: var(--main-color);
+}
+.navbar-nav li .nav-link {
+  transition: all 0.5s;
+}
+.navbar-nav li:hover .nav-link {
+  color: var(--main-color);
+}
+/* body:not(body:has(:target)) #my-nav .nav-link[href="#home"],
+body:has(#home:target) #my-nav .nav-link[href="#home"],
+body:has(#about:target) #my-nav .nav-link[href="#about"],
+body:has(#services:target) #my-nav .nav-link[href="#services"],
+body:has(#client:target) #my-nav .nav-link[href="#client"],
+body:has(#portfolio:target) #my-nav .nav-link[href="#portfolio"],
+body:has(#contact:target) #my-nav .nav-link[href="#contact"],
+body:has(#blog:target) #my-nav .nav-link[href="#blog"] {
+  color: var(--main-color);
+} */
+/* END NAV */
+
+/* START HOME */
+#home {
+  height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.7) 0% 100%),
+    url("../images/header-bg.jpg");
+  background-position: center;
+  background-size: cover;
+}
+#home h4 {
+  font-family: main-font500;
+}
+h1 {
+  font-size: 54px;
+}
+#home p {
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 31.25rem;
+}
+#home a.btn {
+  font-weight: bold;
+  font-size: 14px;
+  padding: 15px 30px;
+}
+#home a.scroll {
+  width: 28px;
+  height: 44px;
+  border: 2px solid white;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px;
+  animation: motion 2.5s infinite alternate;
+}
+#home a.scroll::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 10px;
+  background-color: white;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes motion {
+  0% {
+    bottom: 30px;
+  }
+  20% {
+    bottom: 10px;
+  }
+
+  40% {
+    bottom: 30px;
+  }
+
+  60% {
+    bottom: 10px;
+  }
+
+  80% {
+    bottom: 30px;
+  }
+
+  100% {
+    bottom: 10px;
+  }
+}
+/* END  HOME */
+
+/* START ABOUT */
+.about-content ul li i {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px grey solid;
+  transition: all 0.5s;
+}
+.about-content ul li:hover i {
+  color: var(--main-color);
+  border-color: var(--main-color);
+}
+/* END ABOUT */
+
+/* START SERVICES */
+#services .card h5::after {
+  content: "";
+  position: absolute;
+  width: 35px;
+  height: 2px;
+  background-color: var(--main-color);
+  top: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.7s all;
+}
+#services .card:hover h5::after {
+  width: 70px;
+}
+/* END SERVICES */
+
+/* START CLIENT */
+
+#client .carousel-indicators [data-bs-target] {
+  width: 12px;
+  height: 6px;
+  background-color: var(--main-color);
+  border-radius: 20px;
+  transition: all 0.5s;
+}
+#client .carousel-indicators .active {
+  width: 20px;
+}
+/* END CLIENT */
+
+/* START PORTFOLIO */
+#portfolio .nav-pills .nav-link.active,
+#portfolio .nav-pills .show > .nav-link {
+  background-color: var(--main-color);
+  color: white;
+  border-radius: 30px;
+}
+#portfolio .nav-pills .nav-link {
+  color: black;
+  transition: all 0.5s;
+  font-size: 14px;
+  font-weight: 600;
+}
+#portfolio .nav-pills .nav-link:hover {
+  color: white;
+  background-color: var(--main-color);
+  border-radius: 30px;
+}
+
+#portfolio .portfolio-content {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  top: 150%;
+  transition: all 0.5s;
+  opacity: 0;
+  z-index: 50;
+}
+
+#portfolio .items:hover .portfolio-content {
+  top: 50%;
+  opacity: 1;
+}
+#portfolio .layer {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transition: all 0.5s;
+}
+#portfolio .items:hover .layer {
+  opacity: 1;
+}
+#portfolio .portfolio-content p {
+  color: RGBA(255, 255, 255, 0.6);
+}
+#portfolio picture img {
+  transition: all 0.5s;
+}
+#portfolio .items:hover picture img {
+  transform: scale(1.1);
+}
+/* END PORTFOLIO */
+
+/* START CONTACT */
+#contact input {
+  height: 50px;
+}
+#contact textarea {
+  resize: vertical;
+  min-height: 150px;
+  max-height: 300px;
+}
+#contact .form-control:focus {
+  border-color: var(--main-color);
+  box-shadow: none;
+}
+/* END CONTACT */
+
+/* START FOOTER */
+.footer {
+  padding: 70px 0px;
+  background-color: #212121 !important;
+}
+
+.footer .footer-icon ul li a {
+  border-radius: 50%;
+  transition: all 0.5s;
+  background-color: rgba(241, 241, 241, 0.08);
+  width: 44px;
+  height: 44px;
+  display: block;
+  font-size: 20px;
+  line-height: 44px;
+  text-align: center;
+}
+.footer .footer-icon ul li:hover a {
+  color: var(--main-color);
+}
+/* END FOOTER */
+
+/* START FIXED */
+.settings {
+  color: white;
+  background-color: #2b2424;
+  font-size: 1.25rem;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  top: 20%;
+  left: 0;
+  border-radius: 0 5px 5px 0;
+  padding: 5px 8px;
+}
+.up-arrow {
+  color: white;
+  background-color: var(--main-color);
+  width: 35px;
+  height: 35px;
+  position: fixed;
+  right: 20px;
+  bottom: 10px;
+  border-radius: 5px;
+}
+/* END FIXED */
